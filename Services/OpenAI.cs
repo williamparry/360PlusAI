@@ -112,7 +112,7 @@ namespace ThreeSixtyPlusAI.Services
                 {
                     answersForQuestion.ForEach(answer =>
                         {
-                            payload += answer.AnswerText + ".";
+                            payload += answer.AnswerText + (!answer.AnswerText.EndsWith(".") ? "." : "");
                         });
                 }
                 else
@@ -142,7 +142,7 @@ namespace ThreeSixtyPlusAI.Services
             {
                 prompt = payload,
                 temperature = 0.9M,
-                max_tokens = 500
+                max_tokens = 1024
             });
             var content = new StringContent(body, Encoding.UTF8, "application/json");
 
