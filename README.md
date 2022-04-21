@@ -1,6 +1,6 @@
-# 360plus.ai
+# 360+AI
 
-Validating whether it's possible to run effective 360 reviews using OpenAI as manager.
+Self-Service 360° reviews using OpenAI.
 
 # Installation
 
@@ -10,7 +10,12 @@ Run on your own infrastructure.
 
 # Development Environment Setup
 
-**_Open in VS Code dev container._**
+You need:
+- VS Code
+- [Remote Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) plugin installed
+- Docker
+
+Then open the repository in a VS Code Remote Container (you should be prompted to).
 
     # Set up secrets
     dotnet user-secrets set "OpenAIAPIKey" "(insert key - sign up at https://openai.com/api/ and get an API key)"
