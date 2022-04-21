@@ -1,0 +1,87 @@
+﻿@page
+@model NewThreeSixtyReview
+@{
+	ViewData["Title"] = "New 360+AI Review";
+}
+
+
+<h1 class="mt-3">Create Your 360+AI review</h1>
+<div class="row justify-content-md-center">
+	<div class="col-md-6">
+
+		<h2 class="h3 mt-3 mb-3">Your role:</h2>
+
+		<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+
+			@foreach (var item in Model.QuestionCategories)
+			{
+				<input type="radio" class="btn-check question-category" name="question-category" value="@item.Id"
+				id="question-category-@item.Id" autocomplete="off">
+				<label class="btn btn-outline-primary" for="question-category-@item.Id"><i
+					class="@item.QuestionCategoryIcon"></i>
+					@item.QuestionCategoryTitle</label>
+			}
+
+		</div>
+		<div class="card mt-3">
+			<div class="card-body">
+				<h2 class="h5 mb-3">What Happens After?</h2>
+
+				<p>10 reviewer links will be generated that your co-workers will use to put in their own answers.
+					<em>You won't be able to see the answers directly.</em>
+				</p>
+				<p>Reviewers are not able to see other reviewers' answers.</p>
+				<p>You can generate your 360+AI Review at any time, even if not everyone has submitted their answers.</p>
+				<p>Once you have generated your 360+AI Review it will be deleted along with your access (see <a asp-page="/Privacy">Privacy</a>).</p>
+				<p>Your 360+AI Review will be deleted in 7 days regardless of whether or not you generate a summary.</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<form method="post" class="visually-hidden">
+
+			<div class="row mt-3 mb-3">
+				<h2 class="h4 col-2"><label asp-for="@Model.NewThreeSixtyReviewForm.TitleInput"
+						class="form-label"></label></h2>
+				<div class="col-6"><input asp-for="@Model.NewThreeSixtyReviewForm.TitleInput" class="form-control">
+				</div>
+			</div>
+
+			<h2 class="h4 mt-3 mb-3">Choose Questions to be Asked</h2>
+			<div id="questions-you-want-to-ask">
+				@* Can't use foreach without a separate int counter? *@
+				@for (var i = 0; i < Model.Questions.Count; i++)
+				{
+					<div class="form-check mt-3 mb-3" data-question-category-id="@Model.Questions[i].QuestionCategory.Id">
+						<input type="hidden" name="NewThreeSixtyReviewForm.QuestionIds.Index" value="@i">
+						<input class="question-input form-check-input" type="checkbox" value="@Model.Questions[i].Id"
+						name='@($"NewThreeSixtyReviewForm.QuestionIds[{i}]")' id="@Model.Questions[i].Id">
+						<label class="form-check-label" for="@Model.Questions[i].Id">
+							@Model.Questions[i].QuestionText
+						</label>
+					</div>
+
+				}
+			</div>
+
+			<button class="btn btn-primary mt-3 mb-3">Submit</button>
+
+		</form>
+
+	</div>
+</div>
+
+@section Scripts {
+<script>
+	// This is not amazing code, but it's MVP
+	$(() => {
+		$questionCategory = $(".question-category");
+		$questionCategory.on("change", function () {
+			$("form.visually-hidden").removeClass("visually-hidden");
+			$(".question-input:checked").prop("checked", false);
+			$("[data-question-category-id]").hide();
+			$(`[data-question-category-id="${this.value}"]`).show();
+		});
+	});
+</script>
+}

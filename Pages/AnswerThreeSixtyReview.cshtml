@@ -1,0 +1,37 @@
+﻿@page "{accessCode}"
+@model AnswerThreeSixtyReview
+@{
+	ViewData["Title"] = "Answer 360+AI Review";
+}
+
+
+<h1 class="mt-3">@Model.Title</h1>
+<div class="row justify-content-md-center">
+	<div class="col-md-6">
+		<p>You have been asked to fill in these questions by your co-worker in order for them to improve.
+		</p>
+		<p>Your answers go into a pool with the other reviewers, and then sent to OpenAI it to summarise. If you don't
+			want something to be attributed to you, don't mention specifics.</p>
+
+		<h2 class="h3 mt-3 mb-3">Questions</h2>
+		<form method="post">
+			@* Can't use foreach without a separate int counter? *@
+			@for (var i = 0; i < Model.QuestionAnswerModels.Count; i++)
+			{
+				<div class="mt-3 mb-3">
+					<label class="mb-3" asp-for="QuestionAnswerModels[i].Answer">
+						<em>@Model.QuestionAnswerModels[i].QuestionText</em>
+					</label>
+					@* TODO: Tech Debt including QuestionText *@
+					<input asp-for="QuestionAnswerModels[i].QuestionText" type="hidden">
+					<input asp-for="QuestionAnswerModels[i].ThreeSixtyReviewQuestionId" type="hidden">
+					<textarea class="form-control" asp-for="QuestionAnswerModels[i].Answer" required></textarea>
+				</div>
+			}
+			<p class="alert alert-warning"><strong>Once you submit you cannot edit; further submissions will be ignored.</strong></p>
+			<button class="btn btn-primary">Submit</button>
+		</form>
+
+
+	</div>
+</div>

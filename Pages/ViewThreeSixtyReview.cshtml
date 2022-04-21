@@ -1,0 +1,72 @@
+﻿@page
+@model ViewThreeSixtyReview
+@{
+    ViewData["Title"] = "View 360+AI Review";
+    var AccessCode = TempData["AccessCode"];
+}
+
+@if (AccessCode is not null)
+{
+    <div class="alert alert-primary" role="alert">
+		<label for="access-code" class="mb-3">This is your Access Code to view your 360+AI Review - copy it somewhere safe; <strong>it will not be displayed again.</strong></label>
+		<textarea id="access-code" class="form-control">@AccessCode.ToString()</textarea>
+</div>
+}
+
+<h1 class="mt-3">@Model.Title</h1>
+<div class="row justify-content-md-center">
+	<div class="col-md-6">
+		<h2 class="h3 mt-3 mb-3">Completed Reviews</h2>
+		<div class="progress">
+
+			<div class="progress-bar" role="progressbar" style="width: @Model.AnsweredPercentage%;"
+				aria-valuenow="@Model.AnsweredPercentage" aria-valuemin="0" aria-valuemax="100">
+				@Math.Round(Model.AnsweredPercentage)%</div>
+		</div>
+
+
+		<div class="mt-4 card card-body">
+			<p>Send these links to your co-workers.</p>
+			<p><small>Completion of reviews hidden to retain anonymity.</small></p>
+			<ul class="list-unstyled">
+				@foreach (var accessCode in Model.AnswererAccessCodes)
+				{
+					<li class="mb-3">
+						<input value="@accessCode" style="width: 100%;" class="form-control">
+					</li>
+				}
+			</ul>
+		</div>
+
+	</div>
+	<div class="col-md-6">
+
+		<p class="alert alert-warning">Once you generate your 360+AI Review, it will be deleted.</p>
+
+		<h2 class="h4">Questions you asked</h2>
+
+		<ul>
+			@foreach (var item in Model.QuestionsAsked)
+			{
+				<li class="mb-2">@item.QuestionText</li>
+			}
+		</ul>
+
+		<form method="post">
+			
+			@if(Model.IsInDevelopmentMode) {
+			<div class="card">
+				<div class="card-body">
+					<div class="form-check">
+						<input asp-for="DoDryRun" class="form-check-input">					
+						<label asp-for="DoDryRun" class="form-check-label"></label>
+					</div>
+				</div>
+			</div>
+			}
+			<button class="btn btn-primary mt-3 mb-3">Generate</button>
+
+		</form>
+
+	</div>
+</div>

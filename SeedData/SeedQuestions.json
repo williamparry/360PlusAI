@@ -1,0 +1,119 @@
+{
+    "QuestionCategories": [
+        {
+            "Id": "f2cfc2d8-0827-4c95-b229-b3a312c54d56",
+            "QuestionCategoryTitle": "Manager",
+            "QuestionCategoryIcon": "bi-person-circle"
+        },
+        {
+            "Id": "b19968c8-31ef-44d1-91c1-83463d7976bf",
+            "QuestionCategoryTitle": "Employee",
+            "QuestionCategoryIcon": "bi-person-badge"
+        }
+    ],
+    "Questions": [
+        {
+            "Id": "3abbbbe4-9ec6-40f5-9332-d9c6b2b471ad",
+            "QuestionCategoryId": "f2cfc2d8-0827-4c95-b229-b3a312c54d56",
+            "QuestionText": "Is this manager effective at solving problems?"
+        },
+        {
+            "Id": "6ec59213-067f-4bef-9a5a-f9258823cb25",
+            "QuestionCategoryId": "f2cfc2d8-0827-4c95-b229-b3a312c54d56",
+            "QuestionText": "Does this manager treat others respectfully?"
+        },
+        {
+            "Id": "95ad7c70-84c1-4edd-bd6e-190769e02b08",
+            "QuestionCategoryId": "f2cfc2d8-0827-4c95-b229-b3a312c54d56",
+            "QuestionText": "Do the actions of this manager inspire growth and development in others?"
+        },
+        {
+            "Id": "f2acb881-da85-4b25-8081-936837a907fd",
+            "QuestionCategoryId": "f2cfc2d8-0827-4c95-b229-b3a312c54d56",
+            "QuestionText": "Is this manager able to resolve conflict appropriately?"
+        },
+        {
+            "Id": "ac2ec8f3-9042-4fad-b918-5ebde5e7c765",
+            "QuestionCategoryId": "f2cfc2d8-0827-4c95-b229-b3a312c54d56",
+            "QuestionText": "Do you receive constructive and helpful feedback from this manager?"
+        },
+        {
+            "Id": "0c74485e-ae23-4db9-af0b-1eafa4821e2b",
+            "QuestionCategoryId": "f2cfc2d8-0827-4c95-b229-b3a312c54d56",
+            "QuestionText": "Is this manager available to provide help and feedback when you want it?"
+        },
+        {
+            "Id": "27995e3e-c61a-400e-b5e6-02d7805d18e8",
+            "QuestionCategoryId": "f2cfc2d8-0827-4c95-b229-b3a312c54d56",
+            "QuestionText": "When making important decisions, does this manager consider the opinions of others?"
+        },
+        {
+            "Id": "aca2ecf3-1b76-4631-a49b-f2f823b1d8d9",
+            "QuestionCategoryId": "f2cfc2d8-0827-4c95-b229-b3a312c54d56",
+            "QuestionText": "Does this manager consistently reward employees for good performance or behavior?"
+        },
+        {
+            "Id": "8074d239-5c43-4af6-960b-46ebd5d30cf1",
+            "QuestionCategoryId": "f2cfc2d8-0827-4c95-b229-b3a312c54d56",
+            "QuestionText": "Do you feel this manager sets clear direction that aligns with the organization's strategy?"
+        },
+        {
+            "Id": "21a16f98-155c-4e2b-acb9-09e887a001d6",
+            "QuestionCategoryId": "f2cfc2d8-0827-4c95-b229-b3a312c54d56",
+            "QuestionText": "Does this manager always control emotions and behavior, even when faced with high-conflict or stressful situations?"
+        },
+
+
+
+        {
+            "Id": "08d16d66-080a-4a3d-8b7f-e84f1246e01d",
+            "QuestionCategoryId": "b19968c8-31ef-44d1-91c1-83463d7976bf",
+            "QuestionText": "Does this employee act professionally?"
+        },
+        {
+            "Id": "069f8124-ae0f-49b5-800e-cc687c9067fb",
+            "QuestionCategoryId": "b19968c8-31ef-44d1-91c1-83463d7976bf",
+            "QuestionText": "Does this employee use their time effectively?"
+        },
+        {
+            "Id": "3eb7d9f8-e9f4-469c-b292-1d6e53e633e0",
+            "QuestionCategoryId": "b19968c8-31ef-44d1-91c1-83463d7976bf",
+            "QuestionText": "Do you believe this employee is honest, ethical and trustworthy?"
+        },
+        {
+            "Id": "24a957f0-261d-491b-b8b7-0929d0dd5adb",
+            "QuestionCategoryId": "b19968c8-31ef-44d1-91c1-83463d7976bf",
+            "QuestionText": "Has this employee shown they apply feedback they receive to learn and grow?"
+        },
+        {
+            "Id": "938efc50-57f9-4166-b26c-c604f67ae344",
+            "QuestionCategoryId": "b19968c8-31ef-44d1-91c1-83463d7976bf",
+            "QuestionText": "Does this employee prioritize the needs of the customer?"
+        },
+        {
+            "Id": "8c445394-cbf1-43c1-b33b-1e504f858fae",
+            "QuestionCategoryId": "b19968c8-31ef-44d1-91c1-83463d7976bf",
+            "QuestionText": "Does this employee show initiative to solve problems?"
+        },
+        {
+            "Id": "10e70c40-a226-42d6-8387-a66c2a021920",
+            "QuestionCategoryId": "b19968c8-31ef-44d1-91c1-83463d7976bf",
+            "QuestionText": "Does this employee motivate others to reach goals?"
+        },
+        {
+            "Id": "e8b77d88-6720-48dd-8007-48221b777cf1",
+            "QuestionCategoryId": "b19968c8-31ef-44d1-91c1-83463d7976bf",
+            "QuestionText": "Has this employee shown initiative to take the lead on team projects or assignments?"
+        },
+        {
+            "Id": "65f77b25-b49b-4d8e-b8c1-00f02abc23b5",
+            "QuestionCategoryId": "b19968c8-31ef-44d1-91c1-83463d7976bf",
+            "QuestionText": "Do you believe this employee knows and represents our company's goals and values?"
+        },
+        {
+            "Id": "c2156adc-d47b-4d30-aff2-84c8fbebe963",
+            "QuestionCategoryId": "b19968c8-31ef-44d1-91c1-83463d7976bf",
+            "QuestionText": "Can you rely on this employee to follow through with his/her promises and responsibilities?"
+        }
+    ]
+}

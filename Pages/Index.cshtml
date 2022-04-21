@@ -1,0 +1,66 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    var IndexMessage = TempData["IndexMessage"];
+}
+
+@if (IndexMessage is not null)
+{
+    <div class="alert alert-success" role="alert">
+    @IndexMessage.ToString()
+</div>
+}
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <h2>360+AI: Self-Service 360° Reviews</h2>
+
+        <div class="row mt-4 mb-4 align-items-center">
+            <div class="col-md-3">
+                <img src="img/openai-logo.svg" alt="OpenAI logo" width="100%">
+            </div>
+            <div class="col-md-9">
+                <p class="mb-0">Using OpenAI, employees can run their own 360° Reviews.<br>
+                    <small>This project is not affiliated with OpenAI, it just uses their API.</small>
+                </p>
+                
+            </div>
+        </div>
+
+        <div class="mt-4 mb-4">
+            <figure>
+            <img src="img/how-it-works.svg" alt="">
+                <figcaption class="mt-4">
+                    How it works: An employee will send questions to their co-workers to fill out. The answers will go to OpenAI, who will aggregate them and send back a summary
+                </figcaption>
+            </figure>
+        </div>
+       
+    </div>
+
+    <div class="col-md-6">
+
+         <form method="post">
+
+            <div class="mb-3">
+                <h2>Existing Review</h2>
+                <label asp-for="AccessCodeInput" class="form-label">Access Code:</label>
+                
+                <textarea asp-for="AccessCodeInput" class="form-control"></textarea>
+            </div>
+
+            <div asp-validation-summary="All"></div>
+
+            <button class="btn btn-primary">Submit</button>
+        </form>
+
+
+        <h2 class="mt-4">Get Started</h2>
+        <p>OpenAI will generate a summary for you based on the questions you ask and answers you receive. It may be an imperfect result.</p>
+        <p>Like with all reviews, keep an open mind.</p>
+        <a class="btn btn-primary btn-lg" asp-page="/NewThreeSixtyReview">New 360+AI Review</a>
+
+    </div>
+
+</div>
