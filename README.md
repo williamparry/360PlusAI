@@ -2,6 +2,11 @@
 
 Self-Service 360° reviews using OpenAI.
 
+![Homepage](Screenshots/home.png)
+![Create](Screenshots/create.png)
+![View](Screenshots/view.png)
+![Answer](Screenshots/answer.png)
+
 # Installation
 
 Run on your own infrastructure.
