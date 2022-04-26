@@ -64,7 +64,17 @@
         },
 
 
-
+        
+        {
+            "Id": "9cb16d51-bc92-49a3-91cb-d4c966089c03",
+            "QuestionCategoryId": "b19968c8-31ef-44d1-91c1-83463d7976bf",
+            "QuestionText": "What does this employee do well?"
+        },
+        {
+            "Id": "5f57df7d-7210-445e-a2bc-60608f189b91",
+            "QuestionCategoryId": "b19968c8-31ef-44d1-91c1-83463d7976bf",
+            "QuestionText": "What does this employee need to improve on?"
+        },
         {
             "Id": "08d16d66-080a-4a3d-8b7f-e84f1246e01d",
             "QuestionCategoryId": "b19968c8-31ef-44d1-91c1-83463d7976bf",

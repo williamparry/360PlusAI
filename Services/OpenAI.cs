@@ -95,7 +95,7 @@ namespace ThreeSixtyPlusAI.Services
 
             // Convert to JSON payload and send
 
-            string payload = "This is a 360 degree review for a person. The following are questions that were asked and the answers from all the reviewers:\n";
+            string payload = "This is a 360 degree review of me:\n";
 
             QuestionsAsked.ForEach(question =>
             {
@@ -112,7 +112,7 @@ namespace ThreeSixtyPlusAI.Services
                 {
                     answersForQuestion.ForEach(answer =>
                         {
-                            payload += answer.AnswerText + (!answer.AnswerText.EndsWith(".") ? "." : "");
+                            payload += "\n-" + answer.AnswerText + (!answer.AnswerText.EndsWith(".") ? "." : "");
                         });
                 }
                 else
@@ -124,7 +124,7 @@ namespace ThreeSixtyPlusAI.Services
 
             });
 
-            payload += "Tell the person a detailed summary of the things they do well, and areas of improvement.";
+            payload += "Tell me helpful feedback based on this review in the form of advice:";
 
             return payload;
         }
@@ -141,8 +141,8 @@ namespace ThreeSixtyPlusAI.Services
             var body = JsonConvert.SerializeObject(new OpenAIRequest
             {
                 prompt = payload,
-                temperature = 0.9M,
-                max_tokens = 1024
+                temperature = 0.7M,
+                max_tokens = 1536
             });
             var content = new StringContent(body, Encoding.UTF8, "application/json");
 
