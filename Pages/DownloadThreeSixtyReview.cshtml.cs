@@ -8,6 +8,8 @@ public class DownloadThreeSixtyReview : PageModel
 {
 
 	private readonly ThreeSixtyPlusAIContext _context;
+	public string? Summary { get; set; }
+	public string? Payload { get; set; }
 
 	public DownloadThreeSixtyReview(
 		ThreeSixtyPlusAIContext context)
@@ -24,7 +26,13 @@ public class DownloadThreeSixtyReview : PageModel
 			throw new Exception();
 		}
 
+		if(TempData["payload"] is not null) {
+			Payload = TempData["payload"].ToString();
+		}
+
 		if(TempData["summary"] is not null) {
+
+			Summary = TempData["summary"].ToString();
 
 			var AccessCode = Utils.GetAccessCode(HttpContext);
 

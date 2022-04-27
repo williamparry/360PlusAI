@@ -4,23 +4,23 @@
 	ViewData["Title"] = "Download your 360+AI review";
 }
 
-@if(TempData["summary"] is not null) {
+@if(Model.Summary is not null) {
 	<h1 class="mt-3">Download Summary</h1>
 	<div class="row justify-content-md-center">
 		<div class="col-md-8">
-			<p>@TempData["summary"]</p>
+			<p style="white-space: pre-line;">@Model.Summary</p>
 		</div>
 		<div class="col-md-4">
 			<p class="alert alert-primary" role="alert">Your 360+AI review has been deleted.</p>
 			<p>You should print/save the summary somewhere.</p>
 		</div>
 	</div>
-} else if(TempData["payload"] is not null) {
+} else if(Model.Payload is not null) {
 	<h1 class="mt-3">Dry Run Payload</h1>
 	<p>This is what would be sent to OpenAI</p>
 	<div class="row justify-content-md-center">
 		<div class="col-md-10">
-			<pre>@TempData["payload"]</pre>
+			<pre>@Model.Payload</pre>
 		</div>
 	</div>
 }

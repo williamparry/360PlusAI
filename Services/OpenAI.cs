@@ -124,7 +124,7 @@ namespace ThreeSixtyPlusAI.Services
 
             });
 
-            payload += "Tell me helpful feedback based on this review in the form of advice:";
+            payload += "Give me advice based on this review as if you are my manager with the aim of helping me improve:";
 
             return payload;
         }
@@ -142,7 +142,8 @@ namespace ThreeSixtyPlusAI.Services
             {
                 prompt = payload,
                 temperature = 0.7M,
-                max_tokens = 1536
+                max_tokens = 2048,
+
             });
             var content = new StringContent(body, Encoding.UTF8, "application/json");
 

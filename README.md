@@ -6,6 +6,8 @@ Self-Service 360° reviews using OpenAI.
 ![Create](Screenshots/create.png)
 ![View](Screenshots/view.png)
 ![Answer](Screenshots/answer.png)
+![Payload](Screenshots/payload.png)
+![Download](Screenshots/download.png)
 
 # Installation
 
